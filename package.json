@@ -1,0 +1,62 @@
+{
+  "name": "css-lab-mcp",
+  "version": "0.1.0",
+  "description": "Find the invisible element eating your clicks. A real-browser CSS debugger (Playwright + Chromium) that shows what's blocking a click, why it's there, and the exact CSS rule to fix. CLI, MCP server, and Node API.",
+  "keywords": [
+    "css",
+    "z-index",
+    "stacking-context",
+    "playwright",
+    "mcp",
+    "debugging",
+    "ai",
+    "model-context-protocol",
+    "devtools"
+  ],
+  "license": "MIT",
+  "author": "Thiago Lavorati",
+  "repository": "github:tlavorati/css-lab-mcp",
+  "homepage": "https://github.com/tlavorati/css-lab-mcp#readme",
+  "bugs": "https://github.com/tlavorati/css-lab-mcp/issues",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "css-lab": "dist/cli.js",
+    "css-lab-mcp": "dist/mcp.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "npm run typecheck",
+    "test": "vitest run",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "picocolors": "^1.1.1",
+    "playwright-core": "^1.64.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

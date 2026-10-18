@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visible fixed header</title>
+  <style>
+    body { margin: 0; font: 15px/1.4 system-ui, sans-serif; }
+    .topbar { position: fixed; top: 0; left: 0; right: 0; height: 64px; z-index: 10; background: #0f172a; color: #fff; padding: 20px; }
+    main { padding: 30px 20px; }
+    button { font: inherit; padding: 8px 14px; }
+  </style>
+</head>
+<body>
+  <header class="topbar">Brand</header>
+  <main><button id="under">Hidden under the bar</button></main>
+</body>
+</html>

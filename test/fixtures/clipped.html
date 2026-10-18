@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clipped by overflow</title>
+  <style>
+    body { margin: 0; font: 15px/1.4 system-ui, sans-serif; padding: 40px; }
+    .panel {
+      position: relative;
+      height: 120px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+    }
+    .panel .more-actions {
+      position: absolute;
+      top: 160px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <p>Panel content</p>
+    <button class="more-actions" id="more">More actions</button>
+  </div>
+</body>
+</html>

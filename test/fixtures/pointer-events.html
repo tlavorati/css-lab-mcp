@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pointer-events</title>
+  <style>
+    body { margin: 0; font: 15px/1.4 system-ui, sans-serif; padding: 40px; }
+    .hero { position: relative; height: 140px; background: #e0f2fe; }
+    /* Decorative gradient on top of the hero, correctly click-through. */
+    .hero-shine {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .6));
+      pointer-events: none;
+    }
+    .locked {
+      pointer-events: none;
+      opacity: .9;
+    }
+    button { font: inherit; padding: 8px 14px; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <button id="cta">Get started</button>
+    <div class="hero-shine"></div>
+  </section>
+  <div class="locked">
+    <p>Plan settings</p>
+    <button id="save">Save</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* Shared feed styles. The bug: every direct child of a card gets its own stacking layer. */
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.4 system-ui, sans-serif; background: #f1f5f9; color: #0f172a; }
+.feed { max-width: 560px; margin: 24px auto; padding: 0 16px; display: block; }
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 12px; }
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; }
+.card-header h2 { margin: 0; font-size: 16px; }
+.card-body { padding: 0 14px 12px; color: #475569; }
+.menu-toggle { border: 0; background: #e2e8f0; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+
+.menu { position: absolute; right: 14px; top: 40px; z-index: 1000; display: none;
+  background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 4px; min-width: 160px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .15); }
+.menu.open { display: block; }
+.menu-item { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 8px 10px; border-radius: 6px; cursor: pointer; font: inherit; }
+.menu-item:hover { background: #f1f5f9; }
+.menu-item.danger { color: #b91c1c; }

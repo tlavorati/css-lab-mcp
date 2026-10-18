@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invisible blockers</title>
+  <style>
+    body { margin: 0; font: 15px/1.4 system-ui, sans-serif; padding: 24px; }
+    section { margin-bottom: 32px; }
+    button, .btn { font: inherit; padding: 10px 16px; }
+
+    /* 1) An empty, transparent, absolutely positioned wrapper left over by a carousel. */
+    .promo { position: relative; height: 90px; background: #fef3c7; padding: 16px; }
+    .carousel-track { position: absolute; inset: 0; }
+
+    /* 2) A "stretched link" pseudo-element covering a whole tile, including its own button. */
+    .tile { position: relative; padding: 16px; border: 1px solid #cbd5e1; border-radius: 8px; }
+    .tile::after { content: ""; position: absolute; inset: 0; }
+
+    /* 3) A modal backdrop that was faded out but never removed. */
+    .backdrop { position: fixed; left: 0; right: 0; bottom: 0; height: 140px; z-index: 40; background: #000; opacity: 0; }
+    footer { position: fixed; bottom: 0; left: 0; right: 0; padding: 16px 24px; background: #f8fafc; }
+
+    /* Not a blocker: decorative overlay that is click-through. */
+    .shine { position: absolute; inset: 0; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <section class="promo">
+    <button id="promo-cta">Claim offer</button>
+    <div class="carousel-track"></div>
+  </section>
+
+  <section class="tile">
+    <h3>Tile title</h3>
+    <button id="tile-action">Add to favorites</button>
+  </section>
+
+  <section style="position: relative">
+    <button id="free">Always clickable</button>
+    <div class="shine"></div>
+  </section>
+
+  <footer><a href="#help" id="help">Help center</a></footer>
+  <div class="backdrop"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leftover modal backdrop</title>
+  <style>
+    body { margin: 0; font: 15px/1.4 system-ui, sans-serif; padding: 40px; }
+    button { font: inherit; padding: 8px 14px; }
+    /* The modal was "closed" by fading it out, but the backdrop still covers the page. */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, .5);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .modal-backdrop.open { opacity: 1; }
+  </style>
+</head>
+<body>
+  <h1>Checkout</h1>
+  <button id="buy">Buy now</button>
+  <div class="modal-backdrop"></div>
+</body>
+</html>

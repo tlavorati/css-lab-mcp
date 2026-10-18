@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hidden elements</title>
+  <style>
+    body { margin: 0; font: 15px/1.4 system-ui, sans-serif; padding: 40px; }
+    .collapsed { display: none; }
+    .ghost { visibility: hidden; }
+    .empty-link { display: inline-block; width: 0; }
+  </style>
+</head>
+<body>
+  <div class="collapsed"><button id="in-collapsed">Inside display:none</button></div>
+  <div class="ghost"><button id="in-ghost">Inside visibility:hidden</button></div>
+  <a class="empty-link" id="empty" href="#"></a>
+</body>
+</html>

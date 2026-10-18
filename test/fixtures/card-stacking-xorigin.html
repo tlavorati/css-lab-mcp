@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Card feed - cross-origin stylesheet</title>
+  <link rel="stylesheet" href="{{CSS_ORIGIN}}/cards.css">
+</head>
+<body>
+  <main class="feed">
+    <article class="card" data-post="1">
+      <header class="card-header">
+        <h2>First post</h2>
+        <button class="menu-toggle" aria-label="More actions">&middot;&middot;&middot;</button>
+        <div class="menu" role="menu">
+          <button class="menu-item" role="menuitem">Edit</button>
+          <button class="menu-item" role="menuitem">Duplicate</button>
+          <button class="menu-item danger" role="menuitem">Delete</button>
+        </div>
+      </header>
+      <p class="card-body">Short body.</p>
+    </article>
+    <article class="card" data-post="2">
+      <header class="card-header">
+        <h2>Second post</h2>
+        <button class="menu-toggle" aria-label="More actions">&middot;&middot;&middot;</button>
+        <div class="menu" role="menu">
+          <button class="menu-item" role="menuitem">Edit</button>
+          <button class="menu-item" role="menuitem">Duplicate</button>
+          <button class="menu-item danger" role="menuitem">Delete</button>
+        </div>
+      </header>
+      <p class="card-body">Another short body.</p>
+    </article>
+    <article class="card" data-post="3">
+      <header class="card-header">
+        <h2>Third post</h2>
+        <button class="menu-toggle" aria-label="More actions">&middot;&middot;&middot;</button>
+        <div class="menu" role="menu">
+          <button class="menu-item" role="menuitem">Edit</button>
+          <button class="menu-item" role="menuitem">Duplicate</button>
+          <button class="menu-item danger" role="menuitem">Delete</button>
+        </div>
+      </header>
+      <p class="card-body">And one more.</p>
+    </article>
+  </main>
+  <p id="log" style="text-align:center"></p>
+  <script src="card-feed.js"></script>
+</body>
+</html>
